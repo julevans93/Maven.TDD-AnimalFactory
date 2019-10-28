@@ -13,4 +13,15 @@ public class Cat extends Mammal {
     public String speak() {
         return "meow!";
     }
+
+    public void setName (String name){
+    }
+    public void setBirthDate (Date birthDate){
+    }
+    private void Integer getId (Integer id){
+    }
+    public void
 }
+
+
+
