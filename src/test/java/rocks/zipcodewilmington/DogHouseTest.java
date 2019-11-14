@@ -1,5 +1,7 @@
 package rocks.zipcodewilmington;
 
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Dog;
 import rocks.zipcodewilmington.animals.animal_creation.AnimalFactory;
@@ -17,6 +19,15 @@ public class DogHouseTest {
     // TODO - Create tests for `Dog getDogById(Integer id)`
     // TODO - Create tests for `Integer getNumberOfDogs()`
 
+    private DogHouse dogHouse;
+    private Dog dog;
+
+    @Before
+    public void setUp(){
+    dogHouse = new DogHouse();
+    dog = new Dog(null, null, 2);
+    }
+
     @Test
     public void testGetNumberOfDogs() {
         // Given (some
@@ -31,4 +42,61 @@ public class DogHouseTest {
         // Then
         DogHouse.getNumberOfDogs();
     }
+
+    @Test
+    public void addTest(){
+        dogHouse.add(dog);
+
+        Integer expected = 1;
+        Integer actual = dogHouse.getNumberOfDogs();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void removeByIdTest(){
+        dogHouse.add(dog);
+
+        dogHouse.remove(2);
+
+        Integer expected = 0;
+        Integer actual = dogHouse.getNumberOfDogs();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void removeTest(){
+        dogHouse.add(dog);
+
+        dogHouse.remove(dog);
+
+        Integer expected = 0;
+        Integer actual = dogHouse.getNumberOfDogs();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getDogByIdTest(){
+        dogHouse.add(dog);
+
+        Dog expected = dog;
+        Dog actual = dogHouse.getDogById(2);
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void getNumberOfDogs(){
+        dogHouse.add(dog);
+
+        Integer expected = 1;
+        Integer actual = dogHouse.getNumberOfDogs();
+
+        Assert.assertEquals(expected,actual);
+    }
+
 }

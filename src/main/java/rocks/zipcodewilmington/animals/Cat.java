@@ -14,13 +14,11 @@ public class Cat extends Mammal {
         return "meow!";
     }
 
-    public void setName (String name){
-    }
+//    public void setName (String name){
+//
+//    }
     public void setBirthDate (Date birthDate){
     }
-    private void Integer getId (Integer id){
-    }
-    public void
 }
 
 
